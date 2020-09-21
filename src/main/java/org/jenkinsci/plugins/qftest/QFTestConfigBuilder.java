@@ -25,6 +25,7 @@ package org.jenkinsci.plugins.qftest;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -48,6 +49,8 @@ import hudson.tasks.Builder;
 import hudson.util.FormValidation;
 import hudson.util.ListBoxModel;
 import net.sf.json.JSONObject;
+
+import static java.util.Collections.emptyList;
 
 @edu.umd.cs.findbugs.annotations.SuppressFBWarnings(
 	value="UUF_UNUSED_FIELD",
@@ -75,12 +78,15 @@ public class QFTestConfigBuilder extends Builder implements QFTestParamProvider
      */
     @DataBoundConstructor
     public QFTestConfigBuilder(List<Suites> suitefield) {
-        this.suitefield = new ArrayList<>(suitefield);
+    	if (suitefield != null) {
+			this.suitefield = new ArrayList<Suites>(suitefield);
+		} else {
+    		this.suitefield = Collections.<Suites>emptyList();
+		}
     }
+    private final List<Suites> suitefield;
 
-    private final ArrayList<Suites> suitefield;
-
-	public ArrayList<Suites> getSuitefield() {
+	public List<Suites> getSuitefield() {
 		return suitefield;
 	}
 

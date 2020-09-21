@@ -227,6 +227,9 @@ Instead of persistently storing the testsuites in a dedicated folder and pointin
 
 # Changelog
 
+## v2.1.1
+* An exception could occur when adding/modifiy a QF-Test job in the Jenkins jobs configuration..
+
 ## v2.1
 * Additional and more advanced concepts of the jenkins pipeline mode are now supported:
     * The QF-Test step can be run in a customized environment, which can e.g. be defined by means of the `environment` statement in a pipeline script. All relevant configuration parameters undergo parameter expansion with respect to the _environment_ set. (By contrast, _groovy variables_ are inherently handled by the interpreter. Their substitution is unaffected by this.)

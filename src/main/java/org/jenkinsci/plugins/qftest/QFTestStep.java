@@ -1,6 +1,7 @@
 package org.jenkinsci.plugins.qftest;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -34,12 +35,16 @@ public class QFTestStep extends Step implements QFTestParamProvider {
 
 	@DataBoundConstructor
     public QFTestStep(List<Suites> suitefield) {
-        this.suitefield = new ArrayList<>(suitefield);
+        if (suitefield != null) {
+            this.suitefield = new ArrayList<Suites>(suitefield);
+        } else {
+            this.suitefield = Collections.<Suites>emptyList();
+        }
     }
 
-    private final ArrayList<Suites> suitefield;
+    private final List<Suites> suitefield;
 
-    public ArrayList<Suites> getSuitefield() {
+    public List<Suites> getSuitefield() {
         return suitefield;
     }
 

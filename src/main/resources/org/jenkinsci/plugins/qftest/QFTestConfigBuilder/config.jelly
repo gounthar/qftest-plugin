@@ -17,9 +17,13 @@
 
     <f:entry title="Test Suite configuration"
         help="/descriptor/org.jenkinsci.plugins.qftest.QFTestConfigBuilder/help/suiteConfig" >
-        <f:repeatable minimum="1" field="suitefield">
-            <st:include page="config.jelly" class="${descriptor.clazz}"/>
-        </f:repeatable>
+        <f:repeatableProperty minimum="1" field="suitefield">
+            <f:entry title="">
+                <div align="right">
+                    <f:repeatableDeleteButton />
+                </div>
+            </f:entry>
+        </f:repeatableProperty>
     </f:entry>
 
     <f:advanced title="Advanced Test result control" >
