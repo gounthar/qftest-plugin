@@ -19,7 +19,7 @@
 
 
   <artifactId>qftest</artifactId>
-  <version>2.1.1-SNAPSHOT</version>
+  <version>2.1.1</version>
   <packaging>hpi</packaging>
   <name>QF-Test Plugin</name>
   <url>https://github.com/jenkinsci/qftest-plugin</url>
@@ -43,7 +43,7 @@
     <connection>scm:git:https://github.com/jenkinsci/qftest-plugin.git</connection>
     <developerConnection>scm:git:https://git@github.com/jenkinsci/qftest-plugin.git</developerConnection>
     <url>https://github.com/jenkinsci/qftest-plugin</url>
-    <tag>HEAD</tag>
+    <tag>qftest-2.1.1</tag>
   </scm>
   <dependencies>
     <dependency>
